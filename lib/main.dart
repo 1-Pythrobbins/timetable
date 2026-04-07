@@ -4,6 +4,7 @@ import 'models.dart';
 import 'scheduler.dart';
 import 'analytics.dart';
 import 'package:flutter/foundation.dart'; // for compute/Isolates
+import 'importer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -102,6 +103,48 @@ class _DashboardTabState extends State<DashboardTab> {
     });
   }
 
+  bool _isImporting = false;
+
+  Future<void> _handleImport() async {
+    setState(() => _isImporting = true);
+    try {
+      final results = await ExcelImporter.importFromExcel();
+      if (!mounted) return;
+      
+      String summary = results.entries
+          .where((e) => e.value > 0)
+          .map((e) => "${e.key}: ${e.value}")
+          .join(", ");
+          
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Import Successful: $summary'), backgroundColor: Colors.green),
+      );
+      setState(() {}); // Refresh UI
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Import Failed: $e'), backgroundColor: Colors.red),
+      );
+    } finally {
+      setState(() => _isImporting = false);
+    }
+  }
+
+  Future<void> _handleDownloadTemplate() async {
+    try {
+      final path = await ExcelImporter.downloadTemplate();
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Template saved to: $path'), backgroundColor: Colors.blue),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to save template: $e'), backgroundColor: Colors.red),
+      );
+    }
+  }
+
   Future<void> _generateTimetable() async {
     setState(() {
       _isGenerating = true;
@@ -183,6 +226,22 @@ class _DashboardTabState extends State<DashboardTab> {
                 icon: _isGenerating ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2)) : const Icon(Icons.bolt),
                 label: const Text('Generate Timetable'),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple, foregroundColor: Colors.white),
+              ),
+              OutlinedButton.icon(
+                onPressed: _isImporting ? null : _handleImport,
+                icon: _isImporting ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator()) : const Icon(Icons.upload_file),
+                label: const Text('Import Excel'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextButton.icon(
+                onPressed: _handleDownloadTemplate,
+                icon: const Icon(Icons.download),
+                label: const Text('Download Excel Template'),
               ),
               OutlinedButton(onPressed: _seedData, child: const Text('Seed Test Data')),
             ],

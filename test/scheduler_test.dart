@@ -23,15 +23,15 @@ void main() {
 
     test('Invigilator: Must assign an invigilator and avoid double-booking', () async {
       // 2 courses
-      final c1 = await db.insert('Courses', {'name': 'C1', 'course_code': 'C1'});
-      final c2 = await db.insert('Courses', {'name': 'C2', 'course_code': 'C2'});
+      await db.insert('Courses', {'name': 'C1', 'course_code': 'C1'});
+      await db.insert('Courses', {'name': 'C2', 'course_code': 'C2'});
 
       // 1 Venue
-      final vId = await db.insert('Venues', {'name': 'Room 1', 'capacity': 100});
+      await db.insert('Venues', {'name': 'Room 1', 'capacity': 100});
 
       // 2 Timeslots
-      final ts1 = await db.insert('TimeSlots', {'day': 'M', 'start_time': '9', 'end_time': '10'});
-      final ts2 = await db.insert('TimeSlots', {'day': 'M', 'start_time': '11', 'end_time': '12'});
+      await db.insert('TimeSlots', {'day': 'M', 'start_time': '9', 'end_time': '10'});
+      await db.insert('TimeSlots', {'day': 'M', 'start_time': '11', 'end_time': '12'});
 
       // 1 Invigilator (Forces different timeslots if only 1 is available)
       final iId = await db.insert('Invigilators', {'name': 'Prof. X'});
