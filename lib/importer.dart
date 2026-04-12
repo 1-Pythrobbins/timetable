@@ -97,23 +97,23 @@ class ExcelImporter {
 
     // Students Sheet
     Sheet studentSheet = excel['Students'];
-    studentSheet.appendRow([CellValue.withValue('Name'), CellValue.withValue('Student Code')]);
-    studentSheet.appendRow([CellValue.withValue('John Doe'), CellValue.withValue('S001')]);
+    studentSheet.appendRow([TextCellValue('Name'), TextCellValue('Student Code')]);
+    studentSheet.appendRow([TextCellValue('John Doe'), TextCellValue('S001')]);
 
     // Courses Sheet
     Sheet courseSheet = excel['Courses'];
-    courseSheet.appendRow([CellValue.withValue('Course Name'), CellValue.withValue('Course Code')]);
-    courseSheet.appendRow([CellValue.withValue('Computer Science 101'), CellValue.withValue('CS101')]);
+    courseSheet.appendRow([TextCellValue('Course Name'), TextCellValue('Course Code')]);
+    courseSheet.appendRow([TextCellValue('Computer Science 101'), TextCellValue('CS101')]);
 
     // Venues Sheet
     Sheet venueSheet = excel['Venues'];
-    venueSheet.appendRow([CellValue.withValue('Venue Name'), CellValue.withValue('Capacity')]);
-    venueSheet.appendRow([CellValue.withValue('Main Hall'), CellValue.withValue('100')]);
+    venueSheet.appendRow([TextCellValue('Venue Name'), TextCellValue('Capacity')]);
+    venueSheet.appendRow([TextCellValue('Main Hall'), TextCellValue('100')]);
 
     // Invigilators Sheet
     Sheet invigSheet = excel['Invigilators'];
-    invigSheet.appendRow([CellValue.withValue('Invigilator Name')]);
-    invigSheet.appendRow([CellValue.withValue('Dr. Smith')]);
+    invigSheet.appendRow([TextCellValue('Invigilator Name')]);
+    invigSheet.appendRow([TextCellValue('Dr. Smith')]);
 
     // Delete default sheet
     excel.delete('Sheet1');
