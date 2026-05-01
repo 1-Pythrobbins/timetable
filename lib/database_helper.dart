@@ -1,10 +1,24 @@
 import 'dart:async';
-import 'package:path/path.dart';
+import 'dart:io';
+import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
   static Database? _database;
+  static String? _customPath;
+
+  static void setPath(String path) => _customPath = path;
+
+  /// Call this at the start of any new isolate that needs database access.
+  static void initializeForIsolate(String path) {
+    if (Platform.isWindows || Platform.isLinux || Platform.isAndroid || Platform.isIOS) {
+      sqfliteFfiInit();
+      databaseFactory = databaseFactoryFfi;
+      setPath(path);
+    }
+  }
 
   factory DatabaseHelper() => _instance;
 
@@ -19,7 +33,11 @@ class DatabaseHelper {
   }
 
   Future<Database> _initDatabase() async {
-    String path = join(await getDatabasesPath(), 'exam_timetable.db');
+    String path = _customPath ?? p.join(await getDatabasesPath(), 'exam_timetable.db');
+    
+    // Ensure the directory exists (important for FFI)
+    await Directory(p.dirname(path)).create(recursive: true);
+
     return await openDatabase(
       path,
       version: 3,
@@ -29,9 +47,11 @@ class DatabaseHelper {
     );
   }
 
-  // Ensure foreign keys are enabled
+  // Ensure foreign keys are enabled and use WAL mode for concurrency
   Future<void> _onConfigure(Database db) async {
     await db.execute('PRAGMA foreign_keys = ON');
+    // On Android, some PRAGMAs return results and must be called via rawQuery
+    await db.rawQuery('PRAGMA journal_mode = WAL');
   }
 
   Future<void> _onCreate(Database db, int version) async {
@@ -163,6 +183,12 @@ class DatabaseHelper {
   Future<List<Map<String, dynamic>>> queryAll(String table) async {
     Database db = await database;
     return await db.query(table);
+  }
+
+  // Raw Query Wrapper
+  Future<List<Map<String, dynamic>>> rawQuery(String sql, [List<dynamic>? arguments]) async {
+    Database db = await database;
+    return await db.rawQuery(sql, arguments);
   }
 
   // Specific Delete (Generic)

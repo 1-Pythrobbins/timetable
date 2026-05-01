@@ -4,6 +4,9 @@ import 'database_helper.dart';
 class ConflictException implements Exception {
   final String message;
   ConflictException(this.message);
+  
+  @override
+  String toString() => message;
 }
 
 class TimetableGenerator {

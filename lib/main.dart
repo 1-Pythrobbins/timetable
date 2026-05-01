@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart' as p;
 import 'database_helper.dart';
 import 'models.dart';
 import 'scheduler.dart';
 import 'analytics.dart';
 import 'package:flutter/foundation.dart'; // for compute/Isolates
 import 'importer.dart';
+import 'dart:io';
+import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
+  if (Platform.isWindows || Platform.isLinux) {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+  }
   runApp(const MyApp());
 }
 
@@ -17,6 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Exam Timetable Manager',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.deepPurple,
@@ -152,7 +161,8 @@ class _DashboardTabState extends State<DashboardTab> {
     });
 
     try {
-      final entries = await compute(_runGeneratorInIsolate, null);
+      final dbPath = p.join(await getDatabasesPath(), 'exam_timetable.db');
+      final entries = await compute(_runGeneratorInIsolate, dbPath);
       await DatabaseHelper().saveTimetable(entries.map((e) => e.toMap()).toList());
       await _loadTimetable();
       if (!mounted) return;
@@ -170,46 +180,156 @@ class _DashboardTabState extends State<DashboardTab> {
     }
   }
 
-  static Future<List<TimetableEntry>> _runGeneratorInIsolate(dynamic _) async {
+  static Future<List<TimetableEntry>> _runGeneratorInIsolate(String path) async {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+    DatabaseHelper.setPath(path);
     return await TimetableGenerator.generate();
   }
 
   Future<void> _seedData() async {
+    final selectedTables = await showDialog<Set<String>>(
+      context: context,
+      builder: (context) {
+        Set<String> selected = {'Students', 'Courses', 'Venues', 'TimeSlots', 'Invigilators'};
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              title: const Text('Select Data to Seed'),
+              content: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: selected.map((table) => CheckboxListTile(
+                    title: Text(table),
+                    value: selected.contains(table),
+                    onChanged: (val) {
+                      setDialogState(() {
+                        if (val == true) selected.add(table);
+                        else selected.remove(table);
+                      });
+                    },
+                  )).toList(),
+                ),
+              ),
+              actions: [
+                TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+                ElevatedButton(onPressed: () => Navigator.pop(context, selected), child: const Text('Seed Selection')),
+              ],
+            );
+          }
+        );
+      }
+    );
+
+    if (selectedTables == null || selectedTables.isEmpty) return;
+
     final db = DatabaseHelper();
-    
-    // Clear all
-    await db.delete('Students', '1=1', []);
-    await db.delete('Courses', '1=1', []);
-    await db.delete('Venues', '1=1', []);
-    await db.delete('TimeSlots', '1=1', []);
-    await db.delete('Invigilators', '1=1', []);
+    try {
+      if (selectedTables.contains('Students')) await db.delete('Students', '1=1', []);
+      if (selectedTables.contains('Courses')) await db.delete('Courses', '1=1', []);
+      if (selectedTables.contains('Venues')) await db.delete('Venues', '1=1', []);
+      if (selectedTables.contains('TimeSlots')) await db.delete('TimeSlots', '1=1', []);
+      if (selectedTables.contains('Invigilators')) await db.delete('Invigilators', '1=1', []);
+      await db.delete('StudentCourses', '1=1', []);
+      await db.delete('Timetable', '1=1', []);
 
-    // Students
-    for(int i=1; i<=10; i++) await db.insert('Students', {'name': 'Student $i', 'student_code': 'S00$i'});
-    
-    // Invigilators
-    await db.insert('Invigilators', {'name': 'Prof. Xavier'});
-    await db.insert('Invigilators', {'name': 'Dr. Strange'});
+      List<int> sIds = [];
+      if (selectedTables.contains('Students')) {
+        for(int i=1; i<=10; i++) {
+          final id = await db.insert('Students', {'name': 'Student $i', 'student_code': 'S00$i'});
+          sIds.add(id);
+        }
+      }
+      
+      if (selectedTables.contains('Invigilators')) {
+        await db.insert('Invigilators', {'name': 'Prof. Xavier'});
+        await db.insert('Invigilators', {'name': 'Dr. Strange'});
+      }
 
-    // Courses
-    final c1 = await db.insert('Courses', {'name': 'Mathematics', 'course_code': 'MATH101'});
-    final c2 = await db.insert('Courses', {'name': 'Physics', 'course_code': 'PHYS101'});
-    final c3 = await db.insert('Courses', {'name': 'Chemistry', 'course_code': 'CHEM101'});
+      int? c1, c2, c3;
+      if (selectedTables.contains('Courses')) {
+        c1 = await db.insert('Courses', {'name': 'Mathematics', 'course_code': 'MATH101'});
+        c2 = await db.insert('Courses', {'name': 'Physics', 'course_code': 'PHYS101'});
+        c3 = await db.insert('Courses', {'name': 'Chemistry', 'course_code': 'CHEM101'});
+      }
 
-    // Enrolments
-    for(int i=1; i<=5; i++) await db.insert('StudentCourses', {'student_id': i, 'course_id': c1});
-    for(int i=4; i<=8; i++) await db.insert('StudentCourses', {'student_id': i, 'course_id': c2});
-    for(int i=8; i<=10; i++) await db.insert('StudentCourses', {'student_id': i, 'course_id': c3});
+      if (selectedTables.contains('Students') && selectedTables.contains('Courses')) {
+        for(int i=0; i<5; i++) await db.insert('StudentCourses', {'student_id': sIds[i], 'course_id': c1!});
+        for(int i=3; i<8; i++) await db.insert('StudentCourses', {'student_id': sIds[i], 'course_id': c2!});
+        for(int i=7; i<10; i++) await db.insert('StudentCourses', {'student_id': sIds[i], 'course_id': c3!});
+      }
 
-    // Venues
-    await db.insert('Venues', {'name': 'Main Hall', 'capacity': 50});
-    await db.insert('Venues', {'name': 'Lab A', 'capacity': 5});
+      if (selectedTables.contains('Venues')) {
+        await db.insert('Venues', {'name': 'Main Hall', 'capacity': 50});
+        await db.insert('Venues', {'name': 'Lab A', 'capacity': 5});
+      }
 
-    // TimeSlots
-    await db.insert('TimeSlots', {'day': 'Monday', 'start_time': '09:00', 'end_time': '11:00'});
-    await db.insert('TimeSlots', {'day': 'Monday', 'start_time': '14:00', 'end_time': '16:00'});
+      if (selectedTables.contains('TimeSlots')) {
+        await db.insert('TimeSlots', {'day': 'Monday', 'start_time': '09:00', 'end_time': '11:00'});
+        await db.insert('TimeSlots', {'day': 'Monday', 'start_time': '14:00', 'end_time': '16:00'});
+      }
 
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Database Seeded!')));
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Database Seeded Successfully!'), backgroundColor: Colors.green));
+      _loadTimetable();
+      _checkIntegrity(); 
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Seeding Failed: $e'), backgroundColor: Colors.red));
+    }
+  }
+
+  Future<void> _checkIntegrity() async {
+    final db = DatabaseHelper();
+    final students = await db.queryAll('Students');
+    List<Map<String, dynamic>> orphans = [];
+
+    for (var s in students) {
+      final List<Map<String, dynamic>> res = await (await db.database).query(
+        'StudentCourses',
+        where: 'student_id = ?',
+        whereArgs: [s['id']],
+      );
+      if (res.isEmpty) {
+        orphans.add(s);
+      }
+    }
+
+    if (orphans.isNotEmpty && mounted) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Icon(Icons.warning, color: Colors.amber, size: 48),
+          content: Text('Found ${orphans.length} students without any course assignments. This will lead to empty schedules for them.'),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context), child: const Text('Ignore')),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                // Switch to Students tab or show management
+                DefaultTabController.of(context).animateTo(2); 
+              },
+              child: const Text('Manage Students'),
+            ),
+          ],
+        ),
+      );
+    }
+  }
+
+  Future<void> _handleExportExcel() async {
+    if (_timetable.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('No timetable to export!')));
+      return;
+    }
+    try {
+      final path = await ExcelImporter.exportTimetable(_timetable);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Excel exported to: $path'), backgroundColor: Colors.blue));
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Export failed: $e'), backgroundColor: Colors.red));
+    }
   }
 
   @override
@@ -238,12 +358,16 @@ class _DashboardTabState extends State<DashboardTab> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TextButton.icon(
-                onPressed: _handleDownloadTemplate,
-                icon: const Icon(Icons.download),
-                label: const Text('Download Excel Template'),
+              Flexible(
+                child: TextButton.icon(
+                  onPressed: _handleDownloadTemplate,
+                  icon: const Icon(Icons.download),
+                  label: const Text('Download Template', overflow: TextOverflow.ellipsis),
+                ),
               ),
-              OutlinedButton(onPressed: _seedData, child: const Text('Seed Test Data')),
+              Flexible(
+                child: OutlinedButton(onPressed: _seedData, child: const Text('Seed Test Data', overflow: TextOverflow.ellipsis)),
+              ),
             ],
           ),
           const SizedBox(height: 20),
@@ -262,7 +386,17 @@ class _DashboardTabState extends State<DashboardTab> {
               ),
             ),
           const Divider(),
-          const Text('Final Schedule', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text('Final Schedule', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              IconButton.filledTonal(
+                onPressed: _handleExportExcel,
+                icon: const Icon(Icons.share),
+                tooltip: 'Export to Excel',
+              ),
+            ],
+          ),
           const SizedBox(height: 10),
           Expanded(
             child: _timetable.isEmpty
@@ -350,6 +484,39 @@ class _AnalyticsTabState extends State<AnalyticsTab> {
                   title: Text(item['student_name']),
                   subtitle: Text('Day: ${item['day']}'),
                   trailing: Text('${item['exam_count']} Exams', style: const TextStyle(color: Colors.amber, fontWeight: FontWeight.bold)),
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: Text('Exam Conflict: ${item['student_name']}'),
+                        content: SizedBox(
+                          width: double.maxFinite,
+                          child: FutureBuilder<List<Map<String, dynamic>>>(
+                            future: TimetableAnalytics.getStudentExamsForDay(item['student_id'], item['day']),
+                            builder: (context, examSnapshot) {
+                              if (!examSnapshot.hasData) return const Center(child: CircularProgressIndicator());
+                              final exams = examSnapshot.data!;
+                              return ListView.builder(
+                                shrinkWrap: true,
+                                itemCount: exams.length,
+                                itemBuilder: (context, i) {
+                                  final e = exams[i];
+                                  return ListTile(
+                                    title: Text(e['course_name'], style: const TextStyle(fontWeight: FontWeight.bold)),
+                                    subtitle: Text('Time: ${e['time_label']}'),
+                                    leading: const Icon(Icons.event_note, color: Colors.deepPurpleAccent),
+                                  );
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                        actions: [
+                          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Close')),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               )).toList(),
             );
@@ -382,73 +549,150 @@ class _AnalyticsTabState extends State<AnalyticsTab> {
 }
 
 // --- Data Management Generic Tab ---
-
-class DataListTab extends StatelessWidget {
+class DataListTab extends StatefulWidget {
   final String table;
   final String title;
   const DataListTab({super.key, required this.table, required this.title});
 
   @override
+  State<DataListTab> createState() => _DataListTabState();
+}
+
+class _DataListTabState extends State<DataListTab> {
+  Future<void> _handleImport() async {
+    try {
+      final count = await ExcelImporter.importTable(table: widget.table, extensions: ['xlsx', 'csv']);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Imported $count ${widget.title}s'), backgroundColor: Colors.green));
+      setState(() {});
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Import failed: $e'), backgroundColor: Colors.red));
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Map<String, dynamic>>>(
-      future: DatabaseHelper().queryAll(table),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
-        final items = snapshot.data!;
-        return ListView.separated(
-          padding: const EdgeInsets.all(16),
-          itemCount: items.length,
-          separatorBuilder: (_, __) => const SizedBox(height: 8),
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return ListTile(
-              tileColor: Colors.grey[900],
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              title: Text(item['name'] ?? 'ID ${item['id']}'),
-              subtitle: Text(item.containsKey('student_code') ? 'Code: ${item['student_code']}' : item.containsKey('capacity') ? 'Capacity: ${item['capacity']}' : ''),
-            );
-          },
-        );
-      },
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Manage ${widget.table}', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ElevatedButton.icon(
+                onPressed: _handleImport,
+                icon: const Icon(Icons.upload_file),
+                label: const Text('Import Excel/CSV'),
+              ),
+            ],
+          ),
+        ),
+        const Divider(),
+        Expanded(
+          child: FutureBuilder<List<Map<String, dynamic>>>(
+            future: DatabaseHelper().queryAll(widget.table),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+              final items = snapshot.data!;
+              if (items.isEmpty) return const Center(child: Text('No data found.'));
+              return ListView.separated(
+                padding: const EdgeInsets.all(16),
+                itemCount: items.length,
+                separatorBuilder: (_, __) => const SizedBox(height: 8),
+                itemBuilder: (context, index) {
+                  final item = items[index];
+                  return ListTile(
+                    tileColor: Colors.grey[900],
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    title: Text(item['name'] ?? 'ID ${item['id']}'),
+                    subtitle: Text(item.containsKey('student_code') ? 'Code: ${item['student_code']}' : item.containsKey('capacity') ? 'Capacity: ${item['capacity']}' : ''),
+                  );
+                },
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
 
 // --- Courses Tab (Custom for Enrollment) ---
 
-class CoursesTab extends StatelessWidget {
+class CoursesTab extends StatefulWidget {
   const CoursesTab({super.key});
+
+  @override
+  State<CoursesTab> createState() => _CoursesTabState();
+}
+
+class _CoursesTabState extends State<CoursesTab> {
+  Future<void> _handleImport() async {
+    try {
+      final count = await ExcelImporter.importTable(table: 'Courses', extensions: ['xlsx', 'csv']);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Imported $count Courses'), backgroundColor: Colors.green));
+      setState(() {});
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Import failed: $e'), backgroundColor: Colors.red));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final db = DatabaseHelper();
-    return FutureBuilder<List<Map<String, dynamic>>>(
-      future: db.queryAll('Courses'),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
-        final courses = snapshot.data!;
-        return ListView.builder(
-          itemCount: courses.length,
-          itemBuilder: (context, index) {
-            final course = courses[index];
-            return FutureBuilder<List<int>>(
-              future: db.getStudentIdsByCourse(course['id']),
-              builder: (context, sSnapshot) {
-                final count = sSnapshot.data?.length ?? 0;
-                return ListTile(
-                  title: Text(course['name']),
-                  subtitle: Text('Code: ${course['course_code']}'),
-                  trailing: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    decoration: BoxDecoration(color: Colors.deepPurple, borderRadius: BorderRadius.circular(20)),
-                    child: Text('$count Students', style: const TextStyle(fontSize: 12)),
-                  ),
-                );
-              },
-            );
-          },
-        );
-      },
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text('Manage Courses', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ElevatedButton.icon(
+                onPressed: _handleImport,
+                icon: const Icon(Icons.upload_file),
+                label: const Text('Import Excel/CSV'),
+              ),
+            ],
+          ),
+        ),
+        const Divider(),
+        Expanded(
+          child: FutureBuilder<List<Map<String, dynamic>>>(
+            future: db.queryAll('Courses'),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+              final courses = snapshot.data!;
+              if (courses.isEmpty) return const Center(child: Text('No courses found.'));
+              return ListView.builder(
+                itemCount: courses.length,
+                itemBuilder: (context, index) {
+                  final course = courses[index];
+                  return FutureBuilder<List<int>>(
+                    future: db.getStudentIdsByCourse(course['id']),
+                    builder: (context, sSnapshot) {
+                      final count = sSnapshot.data?.length ?? 0;
+                      return ListTile(
+                        title: Text(course['name']),
+                        subtitle: Text('Code: ${course['course_code']}'),
+                        trailing: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                          decoration: BoxDecoration(color: Colors.deepPurple, borderRadius: BorderRadius.circular(20)),
+                          child: Text('$count Students', style: const TextStyle(fontSize: 12)),
+                        ),
+                      );
+                    },
+                  );
+                },
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
-}
+}

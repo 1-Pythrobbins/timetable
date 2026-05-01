@@ -53,6 +53,7 @@ class TimetableAnalytics {
         if (count > 1) {
           final student = students.firstWhere((s) => s['id'] == sId);
           densityList.add({
+            'student_id': sId,
             'student_name': student['name'],
             'day': day,
             'exam_count': count,
@@ -62,6 +63,22 @@ class TimetableAnalytics {
     });
 
     return densityList;
+  }
+
+  static Future<List<Map<String, dynamic>>> getStudentExamsForDay(int studentId, String day) async {
+    final db = DatabaseHelper();
+    
+    // Efficiently fetch only the exams for this student on the specific day
+    return await db.rawQuery('''
+      SELECT 
+        c.name as course_name, 
+        ts.start_time || ' - ' || ts.end_time as time_label
+      FROM Timetable t
+      JOIN Courses c ON t.course_id = c.id
+      JOIN TimeSlots ts ON t.timeslot_id = ts.id
+      JOIN StudentCourses sc ON sc.course_id = c.id
+      WHERE sc.student_id = ? AND ts.day = ?
+    ''', [studentId, day]);
   }
 
   static Future<String> exportToCsv() async {
