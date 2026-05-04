@@ -1,41 +1,36 @@
-class Student {
-  final int? id;
-  final String name;
-  final String studentCode;
-
-  Student({this.id, required this.name, required this.studentCode});
-
-  Map<String, dynamic> toMap() => {
-    'id': id,
-    'name': name,
-    'student_code': studentCode,
-  };
-
-  factory Student.fromMap(Map<String, dynamic> map) => Student(
-    id: map['id'],
-    name: map['name'],
-    studentCode: map['student_code'],
-  );
-}
-
 class Course {
   final int? id;
+  final String code;
   final String name;
-  final String courseCode;
-  int enrolledCount; // populated later
+  final int headcount;
+  final bool isAlias;
+  final String? parentCourseCode;
 
-  Course({this.id, required this.name, required this.courseCode, this.enrolledCount = 0});
+  Course({
+    this.id,
+    required this.code,
+    required this.name,
+    required this.headcount,
+    this.isAlias = false,
+    this.parentCourseCode,
+  });
 
   Map<String, dynamic> toMap() => {
     'id': id,
+    'code': code,
     'name': name,
-    'course_code': courseCode,
+    'headcount': headcount,
+    'is_alias': isAlias ? 1 : 0,
+    'parent_course_code': parentCourseCode,
   };
 
   factory Course.fromMap(Map<String, dynamic> map) => Course(
     id: map['id'],
+    code: map['code'],
     name: map['name'],
-    courseCode: map['course_code'],
+    headcount: map['headcount'],
+    isAlias: map['is_alias'] == 1,
+    parentCourseCode: map['parent_course_code'],
   );
 }
 
@@ -59,87 +54,87 @@ class Venue {
   );
 }
 
-class TimeSlot {
-  final int? id;
-  final String day;
-  final String startTime;
-  final String endTime;
-
-  TimeSlot({this.id, required this.day, required this.startTime, required this.endTime});
-
-  Map<String, dynamic> toMap() => {
-    'id': id,
-    'day': day,
-    'start_time': startTime,
-    'end_time': endTime,
-  };
-
-  factory TimeSlot.fromMap(Map<String, dynamic> map) => TimeSlot(
-    id: map['id'],
-    day: map['day'],
-    startTime: map['start_time'],
-    endTime: map['end_time'],
-  );
-
-  @override
-  String toString() => '$day ($startTime - $endTime)';
-}
-
 class Invigilator {
   final int? id;
   final String name;
+  final String department;
+  final int maxDaysPerWeek;
 
-  Invigilator({this.id, required this.name});
+  Invigilator({
+    this.id, 
+    required this.name, 
+    required this.department, 
+    this.maxDaysPerWeek = 3,
+  });
 
   Map<String, dynamic> toMap() => {
     'id': id,
     'name': name,
+    'department': department,
+    'max_days_per_week': maxDaysPerWeek,
   };
 
   factory Invigilator.fromMap(Map<String, dynamic> map) => Invigilator(
     id: map['id'],
     name: map['name'],
+    department: map['department'],
+    maxDaysPerWeek: map['max_days_per_week'] ?? 3,
   );
 }
 
 class TimetableEntry {
   final int? id;
-  final int courseId;
+  final String courseCode;
   final int venueId;
-  final int timeslotId;
+  final DateTime date;
+  final String timeSlot; // e.g., "09:00 - 11:00"
   final int invigilatorId;
-  
-  // Helper fields for UI
-  String? courseName;
-  String? venueName;
-  String? timeslotLabel;
-  String? invigilatorName;
 
   TimetableEntry({
     this.id,
-    required this.courseId,
+    required this.courseCode,
     required this.venueId,
-    required this.timeslotId,
+    required this.date,
+    required this.timeSlot,
     required this.invigilatorId,
-    this.courseName,
-    this.venueName,
-    this.timeslotLabel,
-    this.invigilatorName,
   });
 
   Map<String, dynamic> toMap() => {
     'id': id,
-    'course_id': courseId,
+    'course_code': courseCode,
     'venue_id': venueId,
-    'timeslot_id': timeslotId,
+    'date': date.toIso8601String(),
+    'time_slot': timeSlot,
     'invigilator_id': invigilatorId,
   };
 
   factory TimetableEntry.fromMap(Map<String, dynamic> map) => TimetableEntry(
     id: map['id'],
-    courseId: map['course_id'],
+    courseCode: map['course_code'],
     venueId: map['venue_id'],
-    timeslotId: map['timeslot_id'],
+    date: DateTime.parse(map['date']),
+    timeSlot: map['time_slot'],
     invigilatorId: map['invigilator_id'],
   );
 }
+
+class Student {
+  final int? id;
+  final String studentId;
+  final String name;
+
+  Student({this.id, required this.studentId, required this.name});
+
+  Map<String, dynamic> toMap() => {
+    'id': id,
+    'student_id': studentId,
+    'name': name,
+  };
+
+  factory Student.fromMap(Map<String, dynamic> map) => Student(
+    id: map['id'],
+    studentId: map['student_id'],
+    name: map['name'],
+  );
+}
+

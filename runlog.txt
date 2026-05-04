@@ -1,0 +1,572 @@
+
+A Dart VM Service on SM A175F is available at: http://127.0.0.1:59174/PJ0iOFQvJfE=/
+The Flutter DevTools debugger and profiler on SM A175F is available at:
+http://127.0.0.1:59174/PJ0iOFQvJfE=/devtools/?uri=ws://127.0.0.1:59174/PJ0iOFQvJfE=/ws       
+I/GrallocExtra(14089): gralloc_extra_query:is_SW3D 0
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#1](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/GrallocExtra(14089): gralloc_extra_query:is_SW3D 0
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#1](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295842544131402(auto) mPendingTransactions.size=0 graphicBufferId=60511794233354 transform=0
+D/r_application_1(14089): Can't load libmbrainSDK
+D/r_application_1(14089): initMbrain failed
+I/SurfaceView(14089): 92718417 finishedDrawing
+I/Choreographer(14089): Skipped 71 frames!  The application may be doing too much work on its main thread.
+D/VRI[MainActivity]@10e5a3e(14089): Setup new sync=wmsSync-VRI[MainActivity]@10e5a3e#1
+I/VRI[MainActivity]@10e5a3e(14089): Creating new active sync group VRI[MainActivity]@10e5a3e#2
+D/VRI[MainActivity]@10e5a3e(14089): Draw frame after cancel
+D/VRI[MainActivity]@10e5a3e(14089): registerCallbacksForSync syncBuffer=false
+D/SurfaceView(14089): 92718417 updateSurfacePosition RenderWorker, frameNr = 1, position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): uSP: rtp = Rect(0, 0 - 1080, 2340) rtsw = 1080 rtsh = 2340
+I/SV[92718417 MainActivity](14089): onSSPAndSRT: pl = 0 pt = 0 sx = 1.0 sy = 1.0
+I/SV[92718417 MainActivity](14089): aOrMT: VRI[MainActivity]@10e5a3e t = android.view.SurfaceControl$Transaction@d37234f fN = 1 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932 android.graphics.RenderNode$CompositePositionUpdateListener.positionChanged:401
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb40000746870bf80 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.SurfaceView.applyOrMergeTransaction:1863 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932
+D/VRI[MainActivity]@10e5a3e(14089): Received frameDrawingCallback syncResult=0 frameNum=1.   
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073b96b8100 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack>
+I/VRI[MainActivity]@10e5a3e(14089): Setting up sync and frameCommitCallback
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#0](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#0](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295842869751633(auto) mPendingTransactions.size=0 graphicBufferId=60511794233359 transform=0
+I/VRI[MainActivity]@10e5a3e(14089): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+D/HWUI    (14089): CFMS:: SetUp Pid : 14089    Tid : 14156
+D/VRI[MainActivity]@10e5a3e(14089): reportDrawFinished seqId=0
+I/HWUI    (14089): Davey! duration=819ms; Flags=1, FrameTimelineVsyncId=71806270, IntendedVsync=295842050921796, Vsync=295842838820085, InputEventId=0, HandleInputStart=295842841668633, AnimationStart=295842841672325, PerformTraversalsStart=295842841674402, DrawStart=295842846312864, FrameDeadline=295842062032907, FrameStartTime=295842841311402, FrameInterval=11097159, WorkloadTarget=11111111, SyncQueued=295842848668556, SyncStart=295842848987402, IssueDrawCommandsStart=295842854454171, SwapBuffers=295842864792633, FrameCompleted=295842871138171, DequeueBufferDuration=4716923, QueueBufferDuration=1097924, GpuCompleted=295842870771941, SwapBuffersCompleted=295842871138171, DisplayPresentTime=0, CommandSubmissionCompleted=295842864792633,
+D/ProfileInstaller(14089): Installing profile for com.example.flutter_application_1
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0xb4000074688cfe00}
+D/InputMethodManagerUtils(14089): startInputInner - Id : 0
+I/InputMethodManager(14089): startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I/InputMethodManager(14089): handleMessage: setImeVisibility visible=false
+D/InsetsController(14089): hide(ime(), fromIme=false)
+I/ImeTracker(14089): com.example.flutter_application_1:d7e0ed86: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D/InputTransport(14089): Input channel constructed: 'ClientS', fd=188
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[MainActivity]@10e5a3e
+W/r_application_1(14089): userfaultfd: MOVE ioctl seems unsupported: Connection timed out
+W/WindowOnBackDispatcher(14089): sendCancelIfRunning: isInProgress=false callback=io.flutter.embedding.android.FlutterActivity$1@bbbdb27
+W/WindowOnBackDispatcher(14089): sendCancelIfRunning: isInProgress=false callback=io.flutter.embedding.android.FlutterActivity$1@bbbdb27
+W/WindowOnBackDispatcher(14089): sendCancelIfRunning: isInProgress=false callback=io.flutter.embedding.android.FlutterActivity$1@bbbdb27
+W/WindowOnBackDispatcher(14089): sendCancelIfRunning: isInProgress=false callback=io.flutter.embedding.android.FlutterActivity$1@bbbdb27
+D/FilePickerUtils(14089): Allowed file extensions mimes: [application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel]
+D/FilePickerDelegate(14089): Selected type */*
+I/ImeFocusController(14089): onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/ImeFocusController(14089): onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = true visible = false
+D/VRI[MainActivity]@10e5a3e(14089): visibilityChanged oldVisibility=true newVisibility=false
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(8) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false     
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=-5476376646912239872)/@0x6232202
+I/SurfaceView(14089): 92718417 surfaceDestroyed
+I/SV[92718417 MainActivity](14089): surfaceDestroyed callback.size 1 #2 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340}
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = false mSurface.isValid() = true
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#1](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#1(BLAST Consumer)1](id:370900000001,api:0,p:-1,c:14089) disconnect
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/SurfaceView(14089): 170498208 windowPositionLost, frameNr = 0
+D/HWUI    (14089): CacheManager::trimMemory(20)
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#0](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [VRI[MainActivity]@10e5a3e#0(BLAST Consumer)0](id:370900000000,api:0,p:-1,c:14089) disconnect
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)8 dur=8 res=0x2 s={false 0x0} ch=true seqId=0
+I/SV[92718417 MainActivity](14089): windowStopped(true) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/VRI[MainActivity]@10e5a3e(14089): Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility
+D/VRI[MainActivity]@10e5a3e(14089): Pending transaction will not be applied in sync with a draw due to view not visible
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb40000746870a480 mBlastBufferQueue=0xnull fn= 0 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl.handleSyncRequestWhenNoAsyncDraw:6733 android.view.ViewRootImpl.performTraversals:5504 android.view.ViewRootImpl.doTraversal:3924
+I/VRI[MainActivity]@10e5a3e(14089): stopped(true) old = false
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to true
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/BBA2    (14089): setIsFg isFg = false; delayValue 3999ms
+D/InputTransport(14089): Input channel destroyed: 'ClientS', fd=188
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = false visible = true
+I/VRI[MainActivity]@10e5a3e(14089): stopped(false) old = true
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to false
+D/ViewRootImpl(14089): Skipping stats log for color mode
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+I/FilePickerUtils(14089): Caching from URI: content://com.android.providers.media.documents/document/document%3A183005
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(0) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/BufferQueueConsumer(14089): [](id:370900000002,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#2](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 sc.mNativeObject= 0xb4000074688f9d80 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#2](f:0,a:0,s:0) update width=1080 height=2340 format=-3 mTransformHint=0
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)0 dur=9 res=0x3 s={true 0xb4000074688cf900} ch=true seqId=0
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initialize() mSurface={isValid=true 0xb4000074688cf900} hwInitialized=true
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=false alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false    
+I/SV[92718417 MainActivity](14089): windowStopped(false) true io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+I/SurfaceView(14089): 92718417 Changes: creating=true format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false      
+D/BufferQueueConsumer(14089): [](id:370900000003,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#3](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 caller= android.view.SurfaceView.createBlastSurfaceControls:1781 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 sc.mNativeObject= 0xb4000074688f96c0 format= 4 caller= android.view.SurfaceView.createBlastSurfaceControls:1782 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#3](f:0,a:0,s:0) update width=1080 height=2340 format=4 mTransformHint=0
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=0)/@0x6232202    
+I/SV[92718417 MainActivity](14089): pST: sr = Rect(0, 0 - 1080, 2340) sw = 1080 sh = 2340    
+D/SurfaceView(14089): 92718417 performSurfaceTransaction RenderWorker position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = true mSurface.isValid() = true 
+I/SV[92718417 MainActivity](14089): updateSurface: mSurfaceCreated = false surfaceChanged = true visibleChanged = true
+I/SurfaceView(14089): 92718417 visibleChanged -- surfaceCreated
+I/SV[92718417 MainActivity](14089): surfaceCreated 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceChanged -- format=4 w=1080 h=2340
+I/SV[92718417 MainActivity](14089): surfaceChanged (1080,2340) 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceRedrawNeeded
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/VRI[MainActivity]@10e5a3e(14089): reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+D/VRI[MainActivity]@10e5a3e(14089): Setup new sync=wmsSync-VRI[MainActivity]@10e5a3e#4       
+I/VRI[MainActivity]@10e5a3e(14089): Creating new active sync group VRI[MainActivity]@10e5a3e#5
+D/VRI[MainActivity]@10e5a3e(14089): Start draw after previous draw not visible
+D/VRI[MainActivity]@10e5a3e(14089): registerCallbacksForSync syncBuffer=false
+D/SurfaceView(14089): 92718417 updateSurfacePosition RenderWorker, frameNr = 1, position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): uSP: rtp = Rect(0, 0 - 1080, 2340) rtsw = 1080 rtsh = 2340
+I/SV[92718417 MainActivity](14089): onSSPAndSRT: pl = 0 pt = 0 sx = 1.0 sy = 1.0
+I/SV[92718417 MainActivity](14089): aOrMT: VRI[MainActivity]@10e5a3e t = android.view.SurfaceControl$Transaction@383a0f7 fN = 1 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932 android.graphics.RenderNode$CompositePositionUpdateListener.positionChanged:401
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073aeb88080 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.SurfaceView.applyOrMergeTransaction:1863 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932
+D/VRI[MainActivity]@10e5a3e(14089): Received frameDrawingCallback syncResult=0 frameNum=1.
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073aeb88800 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack>
+I/VRI[MainActivity]@10e5a3e(14089): Setting up sync and frameCommitCallback
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#2](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#2](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295866098852634(auto) mPendingTransactions.size=0 graphicBufferId=60511794233375 transform=0
+I/VRI[MainActivity]@10e5a3e(14089): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity    
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#3](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#3](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295866112120865(auto) mPendingTransactions.size=0 graphicBufferId=60511794233370 transform=0
+D/VRI[MainActivity]@10e5a3e(14089): reportDrawFinished seqId=0
+I/SurfaceView(14089): 92718417 finishedDrawing
+D/FilePickerUtils(14089): File loaded and cached at:/data/user/0/com.example.flutter_application_1/cache/file_picker/1777854938805/Book3.xlsx
+D/FilePickerDelegate(14089): File path:[com.mr.flutter.plugin.filepicker.FileInfo@6c75593]   
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0xb4000074688cf900}
+D/InputMethodManagerUtils(14089): startInputInner - Id : 0
+I/InputMethodManager(14089): startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I/InputMethodManager(14089): handleMessage: setImeVisibility visible=false
+D/InsetsController(14089): hide(ime(), fromIme=false)
+I/ImeTracker(14089): com.example.flutter_application_1:5582f718: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D/InputTransport(14089): Input channel constructed: 'ClientS', fd=190
+I/flutter (14089): Import complete. Total items: 6
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[MainActivity]@10e5a3e
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[MainActivity]@10e5a3e
+D/Choreographer(14089): BBA2 receive callback when in bg : 0
+D/FilePickerUtils(14089): Allowed file extensions mimes: [application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel]
+D/FilePickerDelegate(14089): Selected type */*
+I/ImeFocusController(14089): onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/ImeFocusController(14089): onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = true visible = false
+D/VRI[MainActivity]@10e5a3e(14089): visibilityChanged oldVisibility=true newVisibility=false
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(8) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false     
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=-5476376646912241152)/@0x6232202
+I/SurfaceView(14089): 92718417 surfaceDestroyed
+I/SV[92718417 MainActivity](14089): surfaceDestroyed callback.size 1 #2 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340}
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = false mSurface.isValid() = true
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#3](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#3(BLAST Consumer)3](id:370900000003,api:0,p:-1,c:14089) disconnect
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/SurfaceView(14089): 17664825 windowPositionLost, frameNr = 0
+D/HWUI    (14089): CacheManager::trimMemory(20)
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#2](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [VRI[MainActivity]@10e5a3e#2(BLAST Consumer)2](id:370900000002,api:0,p:-1,c:14089) disconnect
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)8 dur=3 res=0x2 s={false 0x0} ch=true seqId=0
+I/SV[92718417 MainActivity](14089): windowStopped(true) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/VRI[MainActivity]@10e5a3e(14089): Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility
+D/VRI[MainActivity]@10e5a3e(14089): Pending transaction will not be applied in sync with a draw due to view not visible
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb40000746870a480 mBlastBufferQueue=0xnull fn= 0 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl.handleSyncRequestWhenNoAsyncDraw:6733 android.view.ViewRootImpl.performTraversals:5504 android.view.ViewRootImpl.doTraversal:3924
+I/VRI[MainActivity]@10e5a3e(14089): stopped(true) old = false
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to true
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/BBA2    (14089): setIsFg isFg = false; delayValue 3999ms
+D/InputTransport(14089): Input channel destroyed: 'ClientS', fd=190
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = false visible = true
+I/VRI[MainActivity]@10e5a3e(14089): stopped(false) old = true
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to false
+D/ViewRootImpl(14089): Skipping stats log for color mode
+D/BBA2    (14089): setIsFg isFg = true
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+I/FilePickerUtils(14089): Caching from URI: content://com.android.providers.media.documents/document/document%3A183006
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(0) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/BufferQueueConsumer(14089): [](id:370900000004,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#4](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 sc.mNativeObject= 0xb4000074688f9780 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#4](f:0,a:0,s:0) update width=1080 height=2340 format=-3 mTransformHint=0
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)0 dur=10 res=0x3 s={true 0xb4000074688cf400} ch=true seqId=0
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initialize() mSurface={isValid=true 0xb4000074688cf400} hwInitialized=true
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=false alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false    
+I/SV[92718417 MainActivity](14089): windowStopped(false) true io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+I/SurfaceView(14089): 92718417 Changes: creating=true format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false      
+D/BufferQueueConsumer(14089): [](id:370900000005,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#5](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 caller= android.view.SurfaceView.createBlastSurfaceControls:1781 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 sc.mNativeObject= 0xb4000074688f9c00 format= 4 caller= android.view.SurfaceView.createBlastSurfaceControls:1782 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#5](f:0,a:0,s:0) update width=1080 height=2340 format=4 mTransformHint=0
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=0)/@0x6232202    
+I/SV[92718417 MainActivity](14089): pST: sr = Rect(0, 0 - 1080, 2340) sw = 1080 sh = 2340    
+D/SurfaceView(14089): 92718417 performSurfaceTransaction RenderWorker position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = true mSurface.isValid() = true 
+I/SV[92718417 MainActivity](14089): updateSurface: mSurfaceCreated = false surfaceChanged = true visibleChanged = true
+I/SurfaceView(14089): 92718417 visibleChanged -- surfaceCreated
+I/SV[92718417 MainActivity](14089): surfaceCreated 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceChanged -- format=4 w=1080 h=2340
+I/SV[92718417 MainActivity](14089): surfaceChanged (1080,2340) 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceRedrawNeeded
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/VRI[MainActivity]@10e5a3e(14089): reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+D/VRI[MainActivity]@10e5a3e(14089): Setup new sync=wmsSync-VRI[MainActivity]@10e5a3e#7       
+I/VRI[MainActivity]@10e5a3e(14089): Creating new active sync group VRI[MainActivity]@10e5a3e#8
+D/VRI[MainActivity]@10e5a3e(14089): Start draw after previous draw not visible
+D/VRI[MainActivity]@10e5a3e(14089): registerCallbacksForSync syncBuffer=false
+D/SurfaceView(14089): 92718417 updateSurfacePosition RenderWorker, frameNr = 1, position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): uSP: rtp = Rect(0, 0 - 1080, 2340) rtsw = 1080 rtsh = 2340
+I/SV[92718417 MainActivity](14089): onSSPAndSRT: pl = 0 pt = 0 sx = 1.0 sy = 1.0
+I/SV[92718417 MainActivity](14089): aOrMT: VRI[MainActivity]@10e5a3e t = android.view.SurfaceControl$Transaction@65fbc4 fN = 1 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932 android.graphics.RenderNode$CompositePositionUpdateListener.positionChanged:401
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073aeb89880 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.SurfaceView.applyOrMergeTransaction:1863 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932
+D/VRI[MainActivity]@10e5a3e(14089): Received frameDrawingCallback syncResult=0 frameNum=1.   
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073b998b000 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack>
+I/VRI[MainActivity]@10e5a3e(14089): Setting up sync and frameCommitCallback
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#4](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#4](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295882687407635(auto) mPendingTransactions.size=0 graphicBufferId=60511794233392 transform=0
+I/VRI[MainActivity]@10e5a3e(14089): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity    
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#5](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#5](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295882696309174(auto) mPendingTransactions.size=0 graphicBufferId=60511794233387 transform=0
+D/VRI[MainActivity]@10e5a3e(14089): reportDrawFinished seqId=0
+I/SurfaceView(14089): 92718417 finishedDrawing
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0xb4000074688cf400}
+D/InputMethodManagerUtils(14089): startInputInner - Id : 0
+I/InputMethodManager(14089): startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I/InputMethodManager(14089): handleMessage: setImeVisibility visible=false
+D/InsetsController(14089): hide(ime(), fromIme=false)
+I/ImeTracker(14089): com.example.flutter_application_1:899cdf14: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D/FilePickerUtils(14089): File loaded and cached at:/data/user/0/com.example.flutter_application_1/cache/file_picker/1777854955385/Book1.xlsx
+D/FilePickerDelegate(14089): File path:[com.mr.flutter.plugin.filepicker.FileInfo@2b71973]   
+D/InputTransport(14089): Input channel constructed: 'ClientS', fd=192
+I/flutter (14089): Import complete. Total items: 5
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[MainActivity]@10e5a3e
+D/FilePickerUtils(14089): Allowed file extensions mimes: [application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel]
+D/FilePickerDelegate(14089): Selected type */*
+I/ImeFocusController(14089): onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/ImeFocusController(14089): onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = true visible = false
+D/VRI[MainActivity]@10e5a3e(14089): visibilityChanged oldVisibility=true newVisibility=false
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(8) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false     
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=-5476376646912242432)/@0x6232202
+I/SurfaceView(14089): 92718417 surfaceDestroyed
+I/SV[92718417 MainActivity](14089): surfaceDestroyed callback.size 1 #2 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340}
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = false mSurface.isValid() = true
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#5](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#5(BLAST Consumer)5](id:370900000005,api:0,p:-1,c:14089) disconnect
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/SurfaceView(14089): 46561206 windowPositionLost, frameNr = 0
+D/HWUI    (14089): CacheManager::trimMemory(20)
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#4](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [VRI[MainActivity]@10e5a3e#4(BLAST Consumer)4](id:370900000004,api:0,p:-1,c:14089) disconnect
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)8 dur=18 res=0x2 s={false 0x0} ch=true seqId=0
+I/SV[92718417 MainActivity](14089): windowStopped(true) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/VRI[MainActivity]@10e5a3e(14089): Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility
+D/VRI[MainActivity]@10e5a3e(14089): Pending transaction will not be applied in sync with a draw due to view not visible
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb40000746870a480 mBlastBufferQueue=0xnull fn= 0 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl.handleSyncRequestWhenNoAsyncDraw:6733 android.view.ViewRootImpl.performTraversals:5504 android.view.ViewRootImpl.doTraversal:3924
+D/InputTransport(14089): Input channel destroyed: 'ClientS', fd=192
+I/VRI[MainActivity]@10e5a3e(14089): stopped(true) old = false
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to true
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/BBA2    (14089): setIsFg isFg = false; delayValue 3999ms
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = false visible = true
+I/VRI[MainActivity]@10e5a3e(14089): stopped(false) old = true
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to false
+D/ViewRootImpl(14089): Skipping stats log for color mode
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+I/FilePickerUtils(14089): Caching from URI: content://com.android.providers.media.documents/document/document%3A182998
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(0) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/BufferQueueConsumer(14089): [](id:370900000006,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#6](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 sc.mNativeObject= 0xb4000074688f9d80 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#6](f:0,a:0,s:0) update width=1080 height=2340 format=-3 mTransformHint=0
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)0 dur=12 res=0x3 s={true 0xb4000074688cef00} ch=true seqId=0
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initialize() mSurface={isValid=true 0xb4000074688cef00} hwInitialized=true
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=false alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false    
+I/SV[92718417 MainActivity](14089): windowStopped(false) true io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+I/SurfaceView(14089): 92718417 Changes: creating=true format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false      
+D/BufferQueueConsumer(14089): [](id:370900000007,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#7](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 caller= android.view.SurfaceView.createBlastSurfaceControls:1781 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 sc.mNativeObject= 0xb4000074688f9780 format= 4 caller= android.view.SurfaceView.createBlastSurfaceControls:1782 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#7](f:0,a:0,s:0) update width=1080 height=2340 format=4 mTransformHint=0
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=0)/@0x6232202    
+I/SV[92718417 MainActivity](14089): pST: sr = Rect(0, 0 - 1080, 2340) sw = 1080 sh = 2340    
+D/SurfaceView(14089): 92718417 performSurfaceTransaction RenderWorker position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = true mSurface.isValid() = true 
+I/SV[92718417 MainActivity](14089): updateSurface: mSurfaceCreated = false surfaceChanged = true visibleChanged = true
+I/SurfaceView(14089): 92718417 visibleChanged -- surfaceCreated
+I/SV[92718417 MainActivity](14089): surfaceCreated 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceChanged -- format=4 w=1080 h=2340
+I/SV[92718417 MainActivity](14089): surfaceChanged (1080,2340) 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceRedrawNeeded
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/VRI[MainActivity]@10e5a3e(14089): reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+D/VRI[MainActivity]@10e5a3e(14089): Setup new sync=wmsSync-VRI[MainActivity]@10e5a3e#10      
+I/VRI[MainActivity]@10e5a3e(14089): Creating new active sync group VRI[MainActivity]@10e5a3e#11
+D/VRI[MainActivity]@10e5a3e(14089): Start draw after previous draw not visible
+D/VRI[MainActivity]@10e5a3e(14089): registerCallbacksForSync syncBuffer=false
+D/SurfaceView(14089): 92718417 updateSurfacePosition RenderWorker, frameNr = 1, position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): uSP: rtp = Rect(0, 0 - 1080, 2340) rtsw = 1080 rtsh = 2340
+I/SV[92718417 MainActivity](14089): onSSPAndSRT: pl = 0 pt = 0 sx = 1.0 sy = 1.0
+I/SV[92718417 MainActivity](14089): aOrMT: VRI[MainActivity]@10e5a3e t = android.view.SurfaceControl$Transaction@c6b8745 fN = 1 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932 android.graphics.RenderNode$CompositePositionUpdateListener.positionChanged:401
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073b998c980 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.SurfaceView.applyOrMergeTransaction:1863 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932
+D/VRI[MainActivity]@10e5a3e(14089): Received frameDrawingCallback syncResult=0 frameNum=1.   
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073b998ce00 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack>
+I/VRI[MainActivity]@10e5a3e(14089): Setting up sync and frameCommitCallback
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#6](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#6](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295890309993482(auto) mPendingTransactions.size=0 graphicBufferId=60511794233409 transform=0
+I/VRI[MainActivity]@10e5a3e(14089): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity    
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#7](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#7](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295890319760251(auto) mPendingTransactions.size=0 graphicBufferId=60511794233404 transform=0
+D/VRI[MainActivity]@10e5a3e(14089): reportDrawFinished seqId=0
+I/SurfaceView(14089): 92718417 finishedDrawing
+D/FilePickerUtils(14089): File loaded and cached at:/data/user/0/com.example.flutter_application_1/cache/file_picker/1777854963006/Book4 (2).xlsx
+D/FilePickerDelegate(14089): File path:[com.mr.flutter.plugin.filepicker.FileInfo@31277a8]   
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0xb4000074688cef00}
+D/InputMethodManagerUtils(14089): startInputInner - Id : 0
+I/InputMethodManager(14089): startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I/InputMethodManager(14089): handleMessage: setImeVisibility visible=false
+D/InsetsController(14089): hide(ime(), fromIme=false)
+I/ImeTracker(14089): com.example.flutter_application_1:8c0069a4: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D/InputTransport(14089): Input channel constructed: 'ClientS', fd=197
+I/flutter (14089): Import complete. Total items: 5
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[MainActivity]@10e5a3e
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[MainActivity]@10e5a3e
+D/FilePickerUtils(14089): Allowed file extensions mimes: [application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel]
+D/FilePickerDelegate(14089): Selected type */*
+I/ImeFocusController(14089): onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/ImeFocusController(14089): onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = true visible = false
+D/VRI[MainActivity]@10e5a3e(14089): visibilityChanged oldVisibility=true newVisibility=false
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(8) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false     
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=-5476376646912243712)/@0x6232202
+I/SurfaceView(14089): 92718417 surfaceDestroyed
+I/SV[92718417 MainActivity](14089): surfaceDestroyed callback.size 1 #2 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340}
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = false mSurface.isValid() = true
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#7](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#7(BLAST Consumer)7](id:370900000007,api:0,p:-1,c:14089) disconnect
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/SurfaceView(14089): 7040399 windowPositionLost, frameNr = 0
+D/HWUI    (14089): CacheManager::trimMemory(20)
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#6](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [VRI[MainActivity]@10e5a3e#6(BLAST Consumer)6](id:370900000006,api:0,p:-1,c:14089) disconnect
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)8 dur=9 res=0x2 s={false 0x0} ch=true seqId=0
+I/SV[92718417 MainActivity](14089): windowStopped(true) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/VRI[MainActivity]@10e5a3e(14089): Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility
+D/VRI[MainActivity]@10e5a3e(14089): Pending transaction will not be applied in sync with a draw due to view not visible
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb40000746870a480 mBlastBufferQueue=0xnull fn= 0 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl.handleSyncRequestWhenNoAsyncDraw:6733 android.view.ViewRootImpl.performTraversals:5504 android.view.ViewRootImpl.doTraversal:3924
+I/VRI[MainActivity]@10e5a3e(14089): stopped(true) old = false
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to true
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/InputTransport(14089): Input channel destroyed: 'ClientS', fd=197
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/BBA2    (14089): setIsFg isFg = false; delayValue 3999ms
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = false visible = true
+I/VRI[MainActivity]@10e5a3e(14089): stopped(false) old = true
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to false
+D/ViewRootImpl(14089): Skipping stats log for color mode
+D/BBA2    (14089): setIsFg isFg = true
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+I/FilePickerUtils(14089): Caching from URI: content://com.android.providers.media.documents/document/document%3A182997
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(0) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/BufferQueueConsumer(14089): [](id:370900000008,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#8](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = VRI[MainActivity]@10e5a3e mNativeObject= 0xb4000073b9737800 sc.mNativeObject= 0xb4000073b9a44280 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#8](f:0,a:0,s:0) update width=1080 height=2340 format=-3 mTransformHint=0
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)0 dur=11 res=0x3 s={true 0xb4000073b962f400} ch=true seqId=0
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initialize() mSurface={isValid=true 0xb4000073b962f400} hwInitialized=true
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=false alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false    
+I/SV[92718417 MainActivity](14089): windowStopped(false) true io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+I/SurfaceView(14089): 92718417 Changes: creating=true format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false      
+D/BufferQueueConsumer(14089): [](id:370900000009,api:0,p:-1,c:14089) connect: controlledByApp=false
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#9](f:0,a:0,s:0) constructor()
+I/BLASTBufferQueue_Java(14089): new BLASTBufferQueue, mName= 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 caller= android.view.SurfaceView.createBlastSurfaceControls:1781 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+I/BLASTBufferQueue_Java(14089): update, w= 1080 h= 2340 mName = 586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0 mNativeObject= 0xb4000074688ddc00 sc.mNativeObject= 0xb4000074688f9d80 format= 4 caller= android.view.SurfaceView.createBlastSurfaceControls:1782 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#9](f:0,a:0,s:0) update width=1080 height=2340 format=4 mTransformHint=0
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=0)/@0x6232202    
+I/SV[92718417 MainActivity](14089): pST: sr = Rect(0, 0 - 1080, 2340) sw = 1080 sh = 2340    
+D/SurfaceView(14089): 92718417 performSurfaceTransaction RenderWorker position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = true mSurface.isValid() = true 
+I/SV[92718417 MainActivity](14089): updateSurface: mSurfaceCreated = false surfaceChanged = true visibleChanged = true
+I/SurfaceView(14089): 92718417 visibleChanged -- surfaceCreated
+I/SV[92718417 MainActivity](14089): surfaceCreated 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceChanged -- format=4 w=1080 h=2340
+I/SV[92718417 MainActivity](14089): surfaceChanged (1080,2340) 1 #1 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ......ID 0,0-1080,2340}
+I/SurfaceView(14089): 92718417 surfaceRedrawNeeded
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/VRI[MainActivity]@10e5a3e(14089): reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910
+D/VRI[MainActivity]@10e5a3e(14089): Setup new sync=wmsSync-VRI[MainActivity]@10e5a3e#13      
+I/VRI[MainActivity]@10e5a3e(14089): Creating new active sync group VRI[MainActivity]@10e5a3e#14
+D/VRI[MainActivity]@10e5a3e(14089): Start draw after previous draw not visible
+D/VRI[MainActivity]@10e5a3e(14089): registerCallbacksForSync syncBuffer=false
+D/SurfaceView(14089): 92718417 updateSurfacePosition RenderWorker, frameNr = 1, position = [0, 0, 1080, 2340] surfaceSize = 1080x2340
+I/SV[92718417 MainActivity](14089): uSP: rtp = Rect(0, 0 - 1080, 2340) rtsw = 1080 rtsh = 2340
+I/SV[92718417 MainActivity](14089): onSSPAndSRT: pl = 0 pt = 0 sx = 1.0 sy = 1.0
+I/SV[92718417 MainActivity](14089): aOrMT: VRI[MainActivity]@10e5a3e t = android.view.SurfaceControl$Transaction@e448d23 fN = 1 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932 android.graphics.RenderNode$CompositePositionUpdateListener.positionChanged:401
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073b9992300 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.SurfaceView.applyOrMergeTransaction:1863 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932
+D/VRI[MainActivity]@10e5a3e(14089): Received frameDrawingCallback syncResult=0 frameNum=1.   
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb4000073b9992600 mBlastBufferQueue=0xb4000073b9737800 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack>
+I/VRI[MainActivity]@10e5a3e(14089): Setting up sync and frameCommitCallback
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#8](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#8](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295898040032559(auto) mPendingTransactions.size=0 graphicBufferId=60511794233426 transform=0
+I/VRI[MainActivity]@10e5a3e(14089): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity
+I/InsetsSourceConsumer(14089): applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.example.flutter_application_1/com.example.flutter_application_1.MainActivity    
+D/FilePickerUtils(14089): File loaded and cached at:/data/user/0/com.example.flutter_application_1/cache/file_picker/1777854970736/Copy of Book2(1) (1).xlsx
+D/FilePickerDelegate(14089): File path:[com.mr.flutter.plugin.filepicker.FileInfo@242f220]   
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#9](f:0,a:0,s:0) onFrameAvailable the first frame is available
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#9](f:0,a:1,s:0) acquireNextBufferLocked size=1080x2340 mFrameNumber=1 applyTransaction=true mTimestamp=295898057379098(auto) mPendingTransactions.size=0 graphicBufferId=60511794233421 transform=0
+D/VRI[MainActivity]@10e5a3e(14089): reportDrawFinished seqId=0
+I/SurfaceView(14089): 92718417 finishedDrawing
+D/VRI[MainActivity]@10e5a3e(14089): mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0xb4000073b962f400}
+D/InputMethodManagerUtils(14089): startInputInner - Id : 0
+I/InputMethodManager(14089): startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I/flutter (14089): Error importing row 1: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Kwesi Mensah, MATH202]
+I/InputMethodManager(14089): handleMessage: setImeVisibility visible=false
+D/InsetsController(14089): hide(ime(), fromIme=false)
+I/ImeTracker(14089): com.example.flutter_application_1:38e9f367: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D/InputTransport(14089): Input channel constructed: 'ClientS', fd=199
+I/flutter (14089): Error importing row 2: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Ama Serwaa, MATH202]
+I/flutter (14089): Error importing row 3: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Kojo Antwi, ENG101]
+I/flutter (14089): Error importing row 4: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Abena Osei, MATH202]
+I/flutter (14089): Error importing row 5: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Yaw Boateng, CS204]
+I/flutter (14089): Error importing row 6: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Efua Appiah, ENG101]
+I/flutter (14089): Error importing row 7: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Kwame Addo, MATH202]
+I/flutter (14089): Error importing row 8: DatabaseException(FOREIGN KEY constraint failed (code 787 SQLITE_CONSTRAINT_FOREIGNKEY[787])) sql 'INSERT INTO student_courses (student_id, course_code) VALUES (?, ?)' args [Akosua Baah, MATH202]
+I/flutter (14089): Import complete. Total items: 0
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[MainActivity]@10e5a3e
+W/WindowOnBackDispatcher(14089): sendCancelIfRunning: isInProgress=false callback=io.flutter.embedding.android.FlutterActivity$1@bbbdb27
+W/WindowOnBackDispatcher(14089): sendCancelIfRunning: isInProgress=false callback=io.flutter.embedding.android.FlutterActivity$1@bbbdb27
+W/WindowOnBackDispatcher(14089): sendCancelIfRunning: isInProgress=false callback=io.flutter.embedding.android.FlutterActivity$1@bbbdb27
+W/System  (14089): A resource failed to call close. 
+W/System  (14089): A resource failed to call close. 
+W/System  (14089): A resource failed to call close.
+W/System  (14089): A resource failed to call close.
+W/System  (14089): A resource failed to call close.
+W/System  (14089): A resource failed to call close.
+W/System  (14089): A resource failed to call close.
+W/System  (14089): A resource failed to call close.
+I/VRI[MainActivity]@10e5a3e(14089): call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[MainActivity]@10e5a3e
+I/VRI[MainActivity]@10e5a3e(14089): handleAppVisibility mAppVisible = true visible = false
+D/VRI[MainActivity]@10e5a3e(14089): visibilityChanged oldVisibility=true newVisibility=false
+I/SV[92718417 MainActivity](14089): onWindowVisibilityChanged(8) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e
+I/SurfaceView(14089): 92718417 Changes: creating=false format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false     
+I/SurfaceView(14089): 92718417 Cur surface: Surface(name=null mNativeObject=-5476376646912244992)/@0x6232202
+I/SurfaceView(14089): 92718417 surfaceDestroyed
+I/SV[92718417 MainActivity](14089): surfaceDestroyed callback.size 1 #2 io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340}
+I/SV[92718417 MainActivity](14089): updateSurface: mVisible = false mSurface.isValid() = true
+I/BLASTBufferQueue(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#9](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [586c551 SurfaceView[com.example.flutter_application_1/com.example.flutter_application_1.MainActivity]@0#9(BLAST Consumer)9](id:370900000009,api:0,p:-1,c:14089) disconnect
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+V/SurfaceView(14089): Layout: x=0 y=0 w=1080 h=2340, frame=Rect(0, 0 - 1080, 2340)
+D/SurfaceView(14089): 185283555 windowPositionLost, frameNr = 0
+D/HWUI    (14089): CacheManager::trimMemory(20)
+I/BLASTBufferQueue(14089): [VRI[MainActivity]@10e5a3e#8](f:0,a:1,s:0) destructor()
+D/BufferQueueConsumer(14089): [VRI[MainActivity]@10e5a3e#8(BLAST Consumer)8](id:370900000008,api:0,p:-1,c:14089) disconnect
+I/VRI[MainActivity]@10e5a3e(14089): Relayout returned: old=(0,0,1080,2340) new=(0,0,1080,2340) relayoutAsync=false req=(1080,2340)8 dur=35 res=0x2 s={false 0x0} ch=true seqId=0
+I/SV[92718417 MainActivity](14089): windowStopped(true) false io.flutter.embedding.android.FlutterSurfaceView{586c551 V.E...... ........ 0,0-1080,2340} of VRI[MainActivity]@10e5a3e      
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+D/VRI[MainActivity]@10e5a3e(14089): Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility
+D/VRI[MainActivity]@10e5a3e(14089): Pending transaction will not be applied in sync with a draw due to view not visible
+I/VRI[MainActivity]@10e5a3e(14089): mWNT: t=0xb40000746870a480 mBlastBufferQueue=0xnull fn= 0 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl.handleSyncRequestWhenNoAsyncDraw:6733 android.view.ViewRootImpl.performTraversals:5504 android.view.ViewRootImpl.doTraversal:3924
+D/HWUI    (14089): CacheManager::trimMemory(20)
+I/VRI[MainActivity]@10e5a3e(14089): stopped(true) old = false
+D/VRI[MainActivity]@10e5a3e(14089): WindowStopped on com.example.flutter_application_1/com.example.flutter_application_1.MainActivity set to true
+D/HWUI    (14089): CacheManager::trimMemory(20)
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+I/VRI[MainActivity]@10e5a3e(14089): onDisplayChanged oldDisplayState=2 newDisplayState=1     
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e    
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+I/ImeFocusController(14089): onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/ImeFocusController(14089): onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I/VRI[MainActivity]@10e5a3e(14089): onDisplayChanged oldDisplayState=1 newDisplayState=3
+D/SV[92718417 MainActivity](14089): updateSurface: surface is not valid
+I/SV[92718417 MainActivity](14089): releaseSurfaces: viewRoot = VRI[MainActivity]@10e5a3e
+D/VRI[MainActivity]@10e5a3e(14089): applyTransactionOnDraw applyImmediately
+I/VRI[MainActivity]@10e5a3e(14089): onDisplayChanged oldDisplayState=3 newDisplayState=4
+I/VRI[MainActivity]@10e5a3e(14089): onDisplayChanged oldDisplayState=4 newDisplayState=3
+I/VRI[MainActivity]@10e5a3e(14089): onDisplayChanged oldDisplayState=3 newDisplayState=4

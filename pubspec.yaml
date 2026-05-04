@@ -35,6 +35,10 @@ dependencies:
   file_picker: ^8.3.7
   sqflite_common_ffi: ^2.4.0
   sqlite3_flutter_libs: ^0.5.42
+  intl: ^0.18.1
+  pdf: ^3.10.7
+  printing: ^5.11.0
+  share_plus: ^7.2.1
 
 
 dependency_overrides:
@@ -51,6 +55,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_icon.jpg"
+  min_sdk_android: 21 # flutter_launcher_icons requires this to be at least 21
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
